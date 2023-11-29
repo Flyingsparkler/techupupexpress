@@ -43,8 +43,10 @@ app.post("/", (req, res) => {
     const prompt = "Hello ChatGPT, please suggest a " + noOfDays + " days meals plan with recipes for a " + diet + " with cuisines, " + cuisine + " and formatted in HTML.";
     
     console.log(prompt);
-    const openai = new OpenAI(); 
-    
+    //const openai = new OpenAI(); 
+    const openai = new OpenAI({
+        apiKey: process.env["OPENAI_API_KEY"],
+    });
     const completion = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }],

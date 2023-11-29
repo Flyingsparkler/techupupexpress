@@ -12,8 +12,8 @@ const __dirname = path.resolve();
 var status = false;
 var mealPlans = '';
 
-app.listen(3000, () => {
-    console.log("Application started and Listening on port 3000");
+app.listen(8080, () => {
+    console.log("Application started and Listening on port 8080");
 });
 
 // server css as static
